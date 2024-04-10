@@ -145,5 +145,5 @@ function keyPressed() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth * 0.9, windowHeight * 0.9);
 }
