@@ -1,11 +1,11 @@
-let f = 0; // Used for animation
+let f = 0;
 let song;
 let fft;
 let colors;
 let maxDiameter;
 
 function preload() {
-  song = loadSound("./mzk/CM_01 Pistachios.mp3"); // Replace with the path to your MP3 file
+  song = loadSound("./mzk/CM_09 Softy.mp3");
 }
 
 function setup() {
@@ -13,16 +13,12 @@ function setup() {
   noFill();
   song.play();
   fft = new p5.FFT();
-  colors = [
-    color(255, 204, 0, 150),
-    color(255, 0, 150, 150),
-    color(0, 255, 255, 150),
-  ];
+  colors = [color(192, 253, 255), color(0, 187, 249), color(0, 245, 212)];
   maxDiameter = min(windowWidth, windowHeight) / 2;
 }
 
 function draw() {
-  background(0);
+  background(13, 27, 42);
 
   let spectrum = fft.analyze();
   let bass = fft.getEnergy("bass");
@@ -53,5 +49,5 @@ function draw() {
     circle(windowWidth / 2, windowHeight / 2, bassDiameter / 20);
   }
 
-  f += 0.01; // Animate by increasing the value
+  f += 0.02; // Animate by increasing the value
 }
